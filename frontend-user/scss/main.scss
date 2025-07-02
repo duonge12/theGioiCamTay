@@ -1,0 +1,9 @@
+// Main SCSS file - Import all components
+@use 'variables' as *;
+@use 'global';
+@use 'header';
+@use 'products';
+@use 'cart';
+@use 'footer';
+@use 'order';
+@use 'responsive'; 

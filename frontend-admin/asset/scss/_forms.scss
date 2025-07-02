@@ -1,0 +1,83 @@
+@import 'variables';
+
+// Product add form
+.product-add {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-sm;
+        margin: $spacing-lg;
+        padding: $spacing-lg;
+        width: 80%;
+        
+        // First row - productName and price
+        > div:first-child {
+            display: flex;
+            gap: $spacing-lg;
+            width: 100%;
+            
+            > div {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        
+        // All div containers (including image, description, brand)
+        > div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        input,
+        select,
+        textarea {
+            height: 40px;
+            width: 100%;
+            padding: $spacing-sm;
+            border: 1px solid #ccc;
+            border-radius: $border-radius-small;
+            box-sizing: border-box;
+        }
+        
+        textarea {
+            height: 50px;
+            resize: vertical;
+        }
+        
+        button {
+            height: 40px;
+            width: auto;
+            min-width: 80px;
+            padding: 0 $spacing-lg;
+            background-color: $primary-color;
+            border: none;
+            border-radius: $border-radius-small;
+            cursor: pointer;
+            font-weight: 500;
+            align-self: flex-start;
+            margin-top: $spacing-sm;
+            color: white;
+            font-size: $font-size-large;
+            
+            &:hover {
+                background-color: $primary-hover;
+                color: white;
+            }
+        }
+        
+        label {
+            align-self: flex-start;
+            font-size: 0.9em;
+            margin-bottom: 1px;
+            color: $text-color;
+            font-weight: 500;
+            width: 100%;
+            text-align: left;
+        }
+    }
+} 

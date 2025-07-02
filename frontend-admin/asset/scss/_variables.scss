@@ -1,0 +1,36 @@
+// CSS Variables
+:root {
+    --main-bg-color: #d5d5d5;
+    --sub-bg-color: #f5f5f5;
+    --top-height: 170px;
+}
+
+// SCSS Variables
+$main-bg-color: #d5d5d5;
+$sub-bg-color: #f5f5f5;
+$primary-color: blue;
+$primary-hover: #0056b3;
+$text-color: #333;
+$text-light: #666;
+$text-lighter: #888;
+$border-color: #e0e0e0;
+$border-light: #f0f0f0;
+$shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+$border-radius-small: 5px;
+
+// Typography
+$font-family: "Roboto", sans-serif;
+$font-size-base: 14px;
+$font-size-small: 12px;
+$font-size-large: 15px;
+
+// Spacing
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 20px;
+$spacing-xl: 30px;
+
+// Breakpoints
+$breakpoint-mobile: 768px; 

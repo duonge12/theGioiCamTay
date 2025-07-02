@@ -1,0 +1,58 @@
+// Variables
+:root {
+    --header-height: 80px;
+    --main-bg-color: #d5d5d5;
+    --main-transition: all 0.3s ease;
+    --main-color: whitesmoke;
+    --main-font: 'Open Sans', sans-serif;
+    --main-font-weight: 500;
+}
+
+// SCSS Variables
+$header-height: 80px;
+$main-bg-color: #d5d5d5;
+$main-transition: all 0.3s ease;
+$main-color: whitesmoke;
+$main-font: 'Open Sans', sans-serif;
+$main-font-weight: 500;
+
+// Colors
+$primary-color: #536ff8;
+$secondary-color: #f9ad08;
+$text-color: #000;
+$text-gray: grey;
+$border-color: #ddd;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$shadow-hover: rgba(0, 0, 0, 0.15);
+$border-light: #e9ecef;
+$accent-color: #007bff;
+$red-color: red;
+
+// Spacing
+$container-padding: 200px;
+$padding-top: 20px;
+$padding-bottom: 10px;
+$gap: 20px;
+$border-radius: 5px;
+$border-radius-large: 10px;
+$border-radius-card: 12px;
+$border-radius-image: 8px;
+
+// Typography
+$font-size-base: 15px;
+$font-size-large: 16px;
+$font-size-xl: 18px;
+$font-size-xxl: 20px;
+$font-size-icon: 24px;
+$font-size-cart-icon: 25px;
+
+// Layout
+$button-min-width: 80px;
+$button-height: 40px;
+$button-padding: 0 20px;
+$input-height: 40px;
+$input-padding: 8px 35px 8px 12px;
+$cart-badge-size: 20px;
+
+// Breakpoints
+$breakpoint-tablet: 1024px; 

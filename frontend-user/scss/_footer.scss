@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+/* Footer */
+footer {
+    background-color: $main-bg-color;
+    padding: 40px 0;
+    margin-top: 40px;
+    
+    .row-grid {
+        grid-template-columns: repeat(3, 30%);
+        gap: $gap;
+    }
+}
+
+.footer-item {
+    p:first-child {
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: $text-color;
+    }
+    
+    p {
+        margin-bottom: 8px;
+        color: $text-gray;
+        line-height: 1.6;
+    }
+} 

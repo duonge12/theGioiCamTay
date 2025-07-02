@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coolmate</title>
+
+    <!-- font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style css -->
+    <link rel="stylesheet" href="./asset/css/style.css" />
+    <link rel="stylesheet" href="./asset/css/responsive.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="row-flex">
+          <div class="header-bar-icon"><i class="fa-solid fa-bars"></i></div>
+          <div class="header-logo">
+            <a href="./index.html">
+              <img src="./asset/img/logo.png" alt="" />
+            </a>
+          </div>
+          <div class="header-nav">
+            <nav>
+              <li><a href="#">SẢN PHẨM ĐẶT HÀNG</a></li>
+              <li><a href="#">SẢN PHẨM CÓ SẴN </a></li>
+              <li><a href="#">GIẢM GIÁ</a></li>
+            </nav>
+          </div>
+          <div class="header-cart">
+            <i class="fa-solid fa-cart-shopping" number="0"></i>
+          </div>
+          <div class="admin-link">
+            <a href="../frontend-admin/asset/productlist.html">Admin</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- card-detail -->
+    <section class="cart-detail">
+      <div class="container">
+        <div class="row-grid row-grid-cart-detail">
+          <p class="heading-title">Giỏ hàng</p>
+        </div>
+        <div class="row-grid row-grid-cart-detail-item">
+            <div class="card-section-left">
+                <h2 class="main-h2">Chi tiết đơn hàng</h2>
+                <div class="card-section-left-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                            <!-- Dữ liệu giỏ hàng sẽ được thêm ở đây bằng JavaScript -->
+                        </tbody>
+                    </table>
+                    <div class="card-section-left-total">
+                      <h3>Tổng tiền: <span class="card-section-right-total-price"><p>0 VNĐ</p></span></h3>
+                  </div>
+                    <div class="card-section-left-button">
+                        <button>Cập nhật giỏ hàng</button>
+                        <a href="#"><i class="fa-solid fa-arrow-right"></i><span><em>Tiếp tục mua hàng</em></span></a>
+                    </div>
+             
+                </div>              
+            </div>
+            <div class="card-section-right">
+                <h2 class="main-h2">Thông tin giao hàng</h2>
+                <form id="shipping-form" class="card-section-right-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Họ và tên" name="fullName" id="fullName" required>
+                        <span class="error-message" id="fullName-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Số điện thoại" name="phone" id="phone" required>
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" name="email" id="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <select name="province" id="province" required>
+                          <option value="">Tỉnh/Thành phố</option>
+                        </select>
+                        <span class="error-message" id="province-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <select name="district" id="district" required>
+                          <option value="">Quận/Huyện</option>
+                        </select>
+                        <span class="error-message" id="district-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <select name="ward" id="ward" required>
+                          <option value="">Phường/Xã</option>
+                        </select>
+                        <span class="error-message" id="ward-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Địa chỉ cụ thể" name="address" id="address" required>
+                        <span class="error-message" id="address-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Ghi chú" name="note" id="note">
+                        <span class="error-message" id="note-error"></span>
+                    </div>
+                    <button type="submit" class="confirm-order">Gửi đơn hàng</button>
+                </form>
+            </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row-grid">
+          <div class="footer-item">
+            <p>Công ty TNHH Coolmate</p>
+            <p>Địa chỉ: 123 Đường ABC, HCM</p>
+            <p>Email: info@coolmate.com</p>
+            <p>Số điện thoại: 0909090909</p>
+          </div>
+          <div class="footer-item">
+            <p>CHÍNH SÁCH</p>
+            <p>Chính sách đổi trả</p>
+            <p>Chính sách khuyến mãi</p>
+            <p>Chính sách giao hàng</p>
+          </div>
+          <div class="footer-item">
+            <p>CHĂM SÓC KHÁCH HÀNG</p>
+            <p>Trải nghiệm khách hàng</p>
+            <p>Hỏi đáp Q&A</p>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+    <!-- Nối script axios và apiprovince.js -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./asset/js/apiprovince.js"></script>
+  <script src="./asset/js/shoppingCart.js"></script>
+  <script src="./asset/js/formValidation.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        window.formValidation = new FormValidation();
+    });
+  </script>
+  </body>
+</html>

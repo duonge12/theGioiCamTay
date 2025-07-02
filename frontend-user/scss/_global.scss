@@ -1,0 +1,94 @@
+@use 'variables' as *;
+
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $main-font;
+}
+
+.container {
+    max-width: calc(100% - #{$container-padding});
+    margin: auto;
+}
+
+.row-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row-grid {
+    display: grid;
+    justify-content: space-between;
+}
+
+.heading-title {
+    font-size: $font-size-xl;
+    font-weight: bolder;
+    color: $text-color;
+    display: inline-block;
+    position: relative;
+    
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        width: 100%;
+        background-color: $text-color;
+        border-radius: $border-radius-large;
+    }
+}
+
+.p-to-top {
+    padding-top: $padding-top;
+}
+
+.main-h2 {
+    font-weight: bolder;
+    font-size: $font-size-large;
+    padding-bottom: $padding-bottom;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+input {
+    outline: none;
+}
+
+select {
+    outline: none;
+}
+
+button {
+    display: inline-block;
+    width: auto;
+    min-width: $button-min-width;
+    height: $button-height;
+    padding: $button-padding;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+    cursor: pointer;
+    margin-top: $padding-bottom;
+    color: white;
+    font-size: $font-size-base;
+    white-space: nowrap;
+    
+    &:hover {
+        background-color: $secondary-color;
+        color: $main-color;
+    }
+} 

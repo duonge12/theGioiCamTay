@@ -1,0 +1,140 @@
+@use 'variables' as *;
+
+/* Responsive */
+@media only screen and (max-width: $breakpoint-tablet) {
+    .row-flex {
+        padding: 0 24px;
+    }
+
+    .header-bar-icon {
+        display: block;
+        font-size: $font-size-icon;
+    }
+
+    .header-nav {
+        position: fixed;
+        top: calc(-100% - #{$header-height});
+        left: 0;
+        width: 100%;
+        background-color: black;
+        color: $main-color;
+        transition: $main-transition;
+        z-index: 2;
+
+        &.active {
+            top: $header-height;
+        }
+
+        nav {
+            flex-direction: column;
+            text-align: center;
+            padding: $padding-top 0;
+            
+            li a {
+                font-size: $font-size-xxl;
+                margin: 0;
+                line-height: 1.2;
+                padding: 6px 0;
+            }
+        }
+    }
+
+    .header-search {
+        display: none;
+    }
+
+    .header-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        img {
+            width: 50%;
+        }
+    }
+    
+    /* Hot product */
+    .hot-product .row-grid-hot-products {
+        grid-template-columns: repeat(2, 45%);
+        margin-top: $padding-top;
+        row-gap: $padding-top;
+    }
+    
+    /* Footer */
+    footer .row-grid {
+        grid-template-columns: repeat(1, 90%);
+        padding-bottom: 50px;
+        margin-top: $padding-top;
+    }
+    
+    .footer-item {
+        margin-bottom: $padding-top;
+    }
+    
+    /* product-detail */
+    .product-detail .row-grid {
+        grid-template-columns: repeat(1, 90%);
+        margin-top: $padding-top;
+        column-gap: 18px;
+    }
+
+    /* card-detail */
+    .cart-detail {
+        .container {
+            max-width: calc(100% - 48px); // Reduce padding on mobile
+            padding: 0 24px;
+        }
+    }
+    
+    .card-section-right {
+        margin-top: $padding-top;
+    }
+    
+    .row-grid-cart-detail-item {
+        grid-template-columns: repeat(1, 100%); // Full width on mobile
+        margin-top: $padding-top;
+        column-gap: 18px;
+        gap: 20px; // Add gap between sections
+    }
+    
+    .card-section-left-table {
+        overflow-x: auto;
+        
+        table {
+            min-width: 500px; // Smaller minimum width on mobile
+        }
+        
+        th, td {
+            padding: 10px 8px; // Reduce padding on mobile
+            font-size: 14px; // Smaller font on mobile
+        }
+    }
+    
+    .card-section-left-total {
+        h3 {
+            font-size: 14px; // Smaller font on mobile
+            flex-direction: column; // Stack on mobile
+            align-items: flex-start;
+            gap: 5px;
+        }
+        
+        .card-section-right-total-price p {
+            font-size: 14px; // Smaller font on mobile
+        }
+    }
+    
+    .card-section-right-form {
+        input, select {
+            font-size: 14px; // Smaller font on mobile
+            padding: 8px; // Reduce padding
+        }
+    }
+    
+    .card-section-right-form-address {
+        flex-direction: column;
+        
+        select {
+            width: 100%;
+        }
+    }
+} 

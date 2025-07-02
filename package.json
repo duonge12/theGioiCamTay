@@ -1,0 +1,28 @@
+{
+  "name": "capstonejavacript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:admin": "sass frontend-admin/asset/scss/main.scss:frontend-admin/asset/css/style.css",
+    "sass:admin:watch": "sass frontend-admin/asset/scss/main.scss:frontend-admin/asset/css/style.css --watch",
+    "sass:admin:build": "sass frontend-admin/asset/scss/main.scss:frontend-admin/asset/css/style.css --style compressed",
+    "sass:user": "sass frontend-user/scss/main.scss:frontend-user/asset/css/style.css",
+    "sass:user:watch": "sass frontend-user/scss/main.scss:frontend-user/asset/css/style.css --watch",
+    "sass:user:build": "sass frontend-user/scss/main.scss:frontend-user/asset/css/style.css --style compressed",
+    "sass:all": "npm run sass:admin && npm run sass:user",
+    "sass:all:watch": "concurrently \"npm run sass:admin:watch\" \"npm run sass:user:watch\"",
+    "sass:all:build": "npm run sass:admin:build && npm run sass:user:build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.10.0"
+  },
+  "devDependencies": {
+    "sass": "^1.89.2",
+    "concurrently": "^8.2.2"
+  }
+}

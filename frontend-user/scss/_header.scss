@@ -1,0 +1,102 @@
+@use 'variables' as *;
+
+/* Header */
+header {
+    height: $header-height;
+    background-color: $main-bg-color;
+    border-bottom: 1px solid $border-color;
+    
+    .row-flex {
+        align-items: center;
+        line-height: $header-height;
+    }
+}
+
+.header-logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    
+    img {
+        width: 50%;    
+    }
+}
+
+.header-bar-icon {
+    display: none;
+}
+
+.header-nav {
+    nav {
+        display: flex;
+        align-items: center;
+        gap: $gap;
+        
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            &:hover {
+                cursor: pointer;
+                transition: $main-transition;
+                transform: scale(1.1);
+            }
+            
+            a {
+                color: $text-gray;
+                
+                &:hover {
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
+
+.header-search {
+    position: relative;
+    
+    input {
+        height: $input-height;
+        padding: $input-padding;
+        border: 1px solid $border-color;
+        border-radius: $border-radius-large;
+    }
+    
+    i {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+        cursor: pointer;
+    }
+}
+
+.header-cart {
+    i {
+        font-size: $font-size-cart-icon;
+        color: $text-color;
+        cursor: pointer;
+        position: relative;
+        
+        &::after {
+            position: absolute;
+            display: flex;
+            content: attr(number);
+            width: $cart-badge-size;
+            height: $cart-badge-size;
+            background-color: $red-color;
+            top: -10px;
+            right: -10px;
+            border-radius: 50%;
+            color: $main-color;
+            font-size: 12px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+} 

@@ -1,0 +1,26 @@
+@use 'variables' as *;
+
+/* Order Confirm */
+.order-confirm {
+    padding: 40px 0;
+}
+
+.order-confirm-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: $border-radius-card;
+    box-shadow: 0 4px 12px $shadow-color;
+    text-align: center;
+    
+    h2 {
+        color: $primary-color;
+        margin-bottom: 20px;
+        font-size: $font-size-xl;
+    }
+    
+    p {
+        color: $text-gray;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+} 

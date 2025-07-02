@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!-- font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+
+<body>
+    <section class="admin">
+       <div class="row-grid">
+        <div class="admin-sidebar">   
+            <a href="../../frontend-user/index.html"><img style="width: 40%; display: block; margin: 30px auto 0 auto;" src="../../frontend-user/asset/img/logo.png" alt=""></a>
+            <ul>
+                <li> <a href=""><i class="fa-brands fa-product-hunt"></i> Sản Phẩm</a></li>
+                <li> <a href=""><i class="fa-solid fa-basket-shopping"></i> Đơn Hàng</a></li>
+            </ul>
+        </div>
+
+        <div class="admin-content">
+            <div class="admin-content-top">
+                <div class="admin-content-top-left"></div>
+                <div class="row-flex admin-content-top-right">
+                    <i class="fa-solid fa-bell"></i>
+                    <i class="fa-solid fa-comments-dollar"></i>
+                    <i class="fa-regular fa-circle"></i>
+                    <p>Admin</p>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="admin-content-main">
+                <div class="admin-content-main-top">
+                    <h1 id="page-title">Sản phẩm</h1>
+                </div>
+                <div class="product-add">
+                    <form class="product-add-input" id="product-form">
+                        <input type="hidden" id="productId">
+                        <div>
+                            <label for="productName">Tên sản phẩm</label>
+                            <input type="text" id="productName" name="productName" placeholder="Tên sản phẩm" required>
+                        </div>
+                        <div>
+                            <label for="price">Giá</label>
+                            <input type="number" id="price" name="price" placeholder="Giá" min="0" required>
+                        </div>
+                        <div>
+                            <label for="screen">Screen</label>
+                            <input type="text" id="screen" name="screen" placeholder="Screen">
+                        </div>
+                        <div>
+                            <label for="backCamera">Back Camera</label>
+                            <input type="text" id="backCamera" name="backCamera" placeholder="Back Camera">
+                        </div>
+                        <div>
+                            <label for="frontCamera">Front Camera</label>
+                            <input type="text" id="frontCamera" name="frontCamera" placeholder="Front Camera">
+                        </div>
+                        <div>
+                            <label for="image">Ảnh (URL)</label>
+                            <input type="url" id="image" name="image" placeholder="Ảnh (URL)">
+                        </div>
+
+                        <div>
+                            <label for="description">Mô tả</label>
+                            <textarea id="description" name="description" placeholder="Mô tả"></textarea>
+                        </div>
+
+                        <div>
+                            <label for="brand">Hãng</label>
+                            <select id="brand" name="brand" required>
+                                <option value="" disabled selected>Chọn hãng</option>
+                                <option value="iphone">Iphone</option>
+                                <option value="samsung">Samsung</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="submit-btn">Thêm sản phẩm</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        </div>
+       </div>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/menuActive.js"></script>
+    <script src="./js/productManagement.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

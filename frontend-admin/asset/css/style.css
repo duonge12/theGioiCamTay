@@ -1,0 +1,365 @@
+:root {
+  --main-bg-color: #d5d5d5;
+  --sub-bg-color: #f5f5f5;
+  --top-height: 170px;
+}
+
+:root {
+  --main-bg-color: #d5d5d5;
+  --sub-bg-color: #f5f5f5;
+  --top-height: 170px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+button {
+  display: inline-block;
+  width: fit-content;
+  height: 40px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 15px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.row-grid {
+  display: grid;
+  justify-content: space-between;
+}
+
+.row-flex {
+  display: flex;
+  align-items: center;
+}
+
+:root {
+  --main-bg-color: #d5d5d5;
+  --sub-bg-color: #f5f5f5;
+  --top-height: 170px;
+}
+
+.admin .row-grid {
+  grid-template-columns: 20% 80%;
+  gap: 10px;
+}
+
+.admin-sidebar {
+  background-color: #d5d5d5;
+  height: 100vh;
+}
+.admin-sidebar ul {
+  list-style: none;
+  margin: 20px 0 0 20px;
+}
+.admin-sidebar ul li {
+  margin-bottom: 10px;
+}
+.admin-sidebar ul li a {
+  color: black;
+}
+.admin-sidebar ul li a:hover {
+  color: blue;
+}
+
+.admin-sidebar ul li a.active {
+  color: blue;
+  background-color: rgba(0, 123, 255, 0.1);
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin: -8px -12px;
+}
+.admin-sidebar ul li a i {
+  margin-right: 10px;
+}
+
+.admin-content-top {
+  height: 30px;
+  margin-top: 0;
+  border-bottom: 1px solid #d5d5d5;
+}
+.admin-content-top-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.admin-content-top-right i {
+  cursor: pointer;
+}
+.admin-content-main-top {
+  margin-top: 10px;
+}
+
+:root {
+  --main-bg-color: #d5d5d5;
+  --sub-bg-color: #f5f5f5;
+  --top-height: 170px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #d5d5d5;
+}
+
+th {
+  padding: 15px 10px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+tbody tr:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.2s ease;
+}
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+tbody tr:nth-child(even):hover {
+  background-color: #f0f2f5;
+}
+
+.list-table {
+  margin: 20px 0 0 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+td:nth-child(5) {
+  font-weight: 600;
+  color: #2c5aa0;
+}
+
+td:last-child a {
+  color: #007bff;
+  font-weight: 500;
+  text-decoration: underline;
+}
+td:last-child a:hover {
+  color: #0056b3;
+}
+
+.product-list td:nth-child(3) {
+  font-weight: 600;
+  color: #2c5aa0;
+}
+.product-list td:first-child {
+  font-weight: 600;
+  color: #888;
+  font-size: 12px;
+}
+.product-list td:nth-child(7) {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.product-list td:last-child {
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 12px;
+  }
+  th, td {
+    padding: 8px 6px;
+  }
+  .order-list {
+    overflow-x: auto;
+  }
+}
+:root {
+  --main-bg-color: #d5d5d5;
+  --sub-bg-color: #f5f5f5;
+  --top-height: 170px;
+}
+
+.product-add form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+  padding: 20px;
+  width: 80%;
+}
+.product-add form > div:first-child {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.product-add form > div:first-child > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.product-add form > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.product-add form input,
+.product-add form select,
+.product-add form textarea {
+  height: 40px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.product-add form textarea {
+  height: 50px;
+  resize: vertical;
+}
+.product-add form button {
+  height: 40px;
+  width: auto;
+  min-width: 80px;
+  padding: 0 20px;
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  align-self: flex-start;
+  margin-top: 10px;
+  color: white;
+  font-size: 15px;
+}
+.product-add form button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+.product-add form label {
+  align-self: flex-start;
+  font-size: 0.9em;
+  margin-bottom: 1px;
+  color: #333;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+}
+
+/* Product List Top */
+.product-list-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.product-list-search {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.product-list-sort {
+  display: flex;
+  align-items: center;
+}
+
+.product-list-search > div:last-child {
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+
+.product-list-top input[type="text"] {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 250px;
+  height: 40px;
+}
+
+.product-list-top input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.product-list-top button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.product-list-top button:hover {
+  background-color: #0056b3;
+}
+
+.product-list-top select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  height: 40px;
+  background-color: white;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.product-list-top select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/*# sourceMappingURL=style.css.map */

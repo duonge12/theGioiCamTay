@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coolmate</title>
+
+    <!-- font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style css -->
+    <link rel="stylesheet" href="./asset/css/style.css" />
+    <link rel="stylesheet" href="./asset/css/responsive.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="row-flex">
+          <div class="header-bar-icon"><i class="fa-solid fa-bars"></i></div>
+          <div class="header-logo">
+            <img src="./asset/img/logo.png" alt="" />
+          </div>
+          <div class="header-nav">
+            <nav>
+              <li><a href="#">SẢN PHẨM ĐẶT HÀNG</a></li>
+              <li><a href="#">SẢN PHẨM CÓ SẴN </a></li>
+              <li><a href="#">GIẢM GIÁ</a></li>
+            </nav>
+          </div>
+          <div class="header-cart">
+            <i class="fa-solid fa-cart-shopping" number="0"></i>
+          </div>
+          <div class="admin-link">
+            <a href="../frontend-admin/asset/productlist.html">Admin</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hot product -->
+    <section class="hot-product">
+      <div class="container">
+        <div class="row-grid">
+          <p class="heading-title">Sản Phẩm Mới</p>
+        </div>
+        <div class="row-grid row-grid-hot-products">
+          <!-- Dữ liệu sản phẩm sẽ được thêm ở đây bằng JavaScript -->
+      </div>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row-grid">
+          <div class="footer-item">
+            <p>Công ty TNHH Coolmate</p>
+            <p>Địa chỉ: 123 Đường ABC, HCM</p>
+            <p>Email: info@coolmate.com</p>
+            <p>Số điện thoại: 0909090909</p>
+          </div>
+          <div class="footer-item">
+            <p>CHÍNH SÁCH</p>
+            <p>Chính sách đổi trả</p>
+            <p>Chính sách khuyến mãi</p>
+            <p>Chính sách giao hàng</p>
+          </div>
+          <div class="footer-item">
+            <p>CHĂM SÓC KHÁCH HÀNG</p>
+            <p>Trải nghiệm khách hàng</p>
+            <p>Hỏi đáp Q&A</p>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+    <!-- Nối script axios và shoppingCart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./asset/js/Product.js"></script>
+  <script src="./asset/js/shoppingCart.js"></script>
+  <script type="module" src="./asset/js/script.js"></script>
+
+  </body>
+</html>

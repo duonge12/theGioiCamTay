@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!-- font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style css -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section class="admin">
+       <div class="row-grid">
+        <div class="admin-sidebar">   
+            <a href="../../frontend-user/index.html"><img style="width: 40%; display: block; margin: 30px auto 0 auto;" src="../../frontend-user/asset/img/logo.png" alt=""></a>
+            <ul>
+                <li> <a href="./productlist.html"><i class="fa-brands fa-product-hunt"></i> Sản Phẩm</a></li>
+                <li> <a href="./orderlist.html"><i class="fa-solid fa-basket-shopping"></i> Đơn Hàng</a></li>
+            </ul>
+        </div>
+
+        <div class="admin-content">
+            <div class="admin-content-top">
+                <div class="admin-content-top-left"></div>
+                <div class="row-flex admin-content-top-right">
+                    <i class="fa-solid fa-bell"></i>
+                    <i class="fa-solid fa-comments-dollar"></i>
+                    <i class="fa-regular fa-circle"></i>
+                    <p>Admin</p>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="admin-content-main">
+                <div class="admin-content-main-top">
+                    <h1>Sản phẩm</h1>
+                </div>
+            <div class="product-list">
+                <div class="product-list-top">
+                    <div class="product-list-button">
+                        <a href="./productadd.html"><button>Thêm sản phẩm</button></a>
+                    </div>
+                    <div class="product-list-search">
+                        <div class="product-list-sort">
+                            <select id="sort-products">
+                                <option value="">Sắp xếp theo giá</option>
+                                <option value="price-asc">Giá tăng dần</option>
+                                <option value="price-desc">Giá giảm dần</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="text" id="search-product" placeholder="Tìm kiếm sản phẩm">
+                            <button id="search-button">Tìm kiếm</button>
+                        </div>
+                    </div>               
+                </div>
+                <table class="list-table" id="product-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Screen</th>
+                            <th>Back Camera</th>
+                            <th>Front Camera</th>
+                            <th>Mô tả</th>
+                            <th>Hãng</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dữ liệu sản phẩm sẽ được thêm ở đây bằng JS -->
+                    </tbody>
+                </table>
+                
+            </div>
+            </div>
+        </div>
+        </div>
+       </div>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/menuActive.js"></script>
+    <script src="./js/productManagement.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

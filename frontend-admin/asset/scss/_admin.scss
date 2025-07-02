@@ -1,0 +1,64 @@
+@import 'variables';
+
+// Main admin layout
+.admin {
+    .row-grid {
+        grid-template-columns: 20% 80%;
+        gap: $spacing-sm;
+    }
+}
+
+// Sidebar
+.admin-sidebar {
+    background-color: $main-bg-color;
+    height: 100vh;
+    
+    ul {
+        list-style: none;
+        margin: $spacing-lg 0 0 $spacing-lg;
+        
+        li {
+            margin-bottom: $spacing-sm;
+            
+            a {
+                color: black;
+                
+                &:hover {
+                    color: $primary-color;
+                }
+                
+                i {
+                    margin-right: $spacing-sm;
+                }
+            }
+        }
+    }
+}
+
+// Admin content
+.admin-content {
+    &-top {
+        height: 30px;
+        margin-top: 0;
+        border-bottom: 1px solid $main-bg-color;
+        
+        &-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: $spacing-sm;
+            margin-right: $spacing-lg;
+            margin-top: $spacing-lg;
+            
+            i {
+                cursor: pointer;
+            }
+        }
+    }
+    
+    &-main {
+        &-top {
+            margin-top: $spacing-sm;
+        }
+    }
+} 

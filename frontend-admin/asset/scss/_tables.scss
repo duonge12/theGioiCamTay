@@ -1,0 +1,121 @@
+@import 'variables';
+
+// Table Styles
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $font-size-base;
+    background: white;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $shadow;
+}
+
+thead {
+    background-color: $main-bg-color;
+}
+
+th {
+    padding: $spacing-md $spacing-sm;
+    text-align: left;
+    font-weight: 600;
+    color: $text-color;
+    border-bottom: 2px solid $border-color;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: $spacing-sm;
+    border-bottom: 1px solid $border-light;
+    vertical-align: middle;
+}
+
+tbody {
+    tr {
+        &:hover {
+            background-color: #f8f9fa;
+            transition: background-color 0.2s ease;
+        }
+        
+        &:nth-child(even) {
+            background-color: #fafafa;
+            
+            &:hover {
+                background-color: #f0f2f5;
+            }
+        }
+    }
+}
+
+// Table container
+.list-table {
+    margin: $spacing-lg 0 0 0;
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+    overflow: hidden;
+}
+
+// Price formatting
+td:nth-child(5) {
+    font-weight: 600;
+    color: #2c5aa0;
+}
+
+// Action links
+td:last-child {
+    a {
+        color: #007bff;
+        font-weight: 500;
+        text-decoration: underline;
+        
+        &:hover {
+            color: #0056b3;
+        }
+    }
+}
+
+// Product list specific styles
+.product-list {
+    td {
+        &:nth-child(3) {
+            font-weight: 600;
+            color: #2c5aa0;
+        }
+        
+        &:first-child {
+            font-weight: 600;
+            color: $text-lighter;
+            font-size: $font-size-small;
+        }
+        
+        &:nth-child(7) {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        &:last-child {
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
+}
+
+// Responsive table
+@media (max-width: $breakpoint-mobile) {
+    table {
+        font-size: $font-size-small;
+    }
+    
+    th, td {
+        padding: 8px 6px;
+    }
+    
+    .order-list {
+        overflow-x: auto;
+    }
+} 
