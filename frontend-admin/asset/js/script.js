@@ -46,8 +46,8 @@ function renderAdminProducts(products) {
             <td>${product.desc}</td>
             <td>${product.type}</td>
             <td>
-                <button class="btn-update" data-id="${product.id}"><i class="fa-solid fa-pen-to-square"></i></button>
-                <button class="btn-delete" data-id="${product.id}"><i class="fa-solid fa-trash"></i></button>
+                <button class="btn-update" data-id="${product.id}">Sửa</button>
+                <button class="btn-delete" data-id="${product.id}">Xóa</button>
             </td>
         </tr>
     `).join('');

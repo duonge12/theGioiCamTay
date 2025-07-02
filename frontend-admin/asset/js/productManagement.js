@@ -316,10 +316,10 @@ class ProductManagement {
                 <td>${product.type}</td>
                 <td>
                     <button class="edit-btn" data-id="${product.id}" style="background: #007bff; color: white; border: none; padding: 5px 8px; border-radius: 3px; margin-right: 5px; cursor: pointer;">
-                        <i class="fa-solid fa-edit"></i>
+                        Sửa
                     </button>
                     <button class="delete-btn" data-id="${product.id}" style="background: #dc3545; color: white; border: none; padding: 5px 8px; border-radius: 3px; cursor: pointer;">
-                        <i class="fa-solid fa-trash"></i>
+                        Xóa
                     </button>
                 </td>
             </tr>

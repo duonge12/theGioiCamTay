@@ -1,3 +1,7 @@
+// Cache for API responses
+const productCache = new Map();
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
 // Menu Bar Responsive
 const menuBar = document.querySelector(".header-bar-icon");
 const headerNav = document.querySelector(".header-nav");
@@ -142,15 +146,55 @@ if (buyNowBtn) {
 
 const API_ENDPOINT = 'https://684cf65e65ed08713914b281.mockapi.io/product';
 
+// Hàm kiểm tra cache
+function getCachedProducts() {
+    const cached = productCache.get('products');
+    if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
+        return cached.data;
+    }
+    return null;
+}
+
+// Hàm lưu cache
+function setCachedProducts(products) {
+    productCache.set('products', {
+        data: products,
+        timestamp: Date.now()
+    });
+}
+
 async function fetchProducts() {
     try {
+        // Kiểm tra cache trước
+        const cachedProducts = getCachedProducts();
+        if (cachedProducts) {
+            console.log('Lấy dữ liệu từ cache');
+            return cachedProducts;
+        }
+
         console.log('Đang gọi API:', API_ENDPOINT);
-        const response = await axios.get(API_ENDPOINT);
+        const response = await axios.get(API_ENDPOINT, {
+            timeout: 10000 // 10 second timeout
+        });
         console.log('Response từ API:', response.data);
-        return response.data.map(item => new window.Product(item));
+        
+        const products = response.data.map(item => new window.Product(item));
+        
+        // Lưu vào cache
+        setCachedProducts(products);
+        
+        return products;
     } catch (error) {
         console.error('Lỗi khi lấy danh sách sản phẩm:', error);
         console.error('Error details:', error.response?.data);
+        
+        // Thử lấy từ cache nếu có lỗi
+        const cachedProducts = getCachedProducts();
+        if (cachedProducts) {
+            console.log('Sử dụng dữ liệu cache do lỗi API');
+            return cachedProducts;
+        }
+        
         return [];
     }
 }
@@ -158,9 +202,23 @@ async function fetchProducts() {
 function renderHotProducts(products) {
     const container = document.querySelector('.row-grid-hot-products');
     if (!container) return;
+    
+    // Xóa loading skeleton
+    const skeleton = container.querySelector('.loading-skeleton');
+    if (skeleton) {
+        skeleton.remove();
+    }
+    
+    if (products.length === 0) {
+        container.innerHTML = '<p style="text-align: center; grid-column: 1/-1; color: #666;">Không có sản phẩm nào</p>';
+        return;
+    }
+    
     container.innerHTML = products.map(product => `
         <div class="hot-product-item">
-            <a href="./product.html?id=${product.id}"><img src="${product.img}" alt="${product.name}"></a>
+            <a href="./product.html?id=${product.id}">
+                <img src="${product.img}" alt="${product.name}" loading="lazy">
+            </a>
             <p><a href="./product.html?id=${product.id}">${product.name}</a></p>
             <span>${product.screen}</span>
             <div class="hot-product-item-price">
@@ -236,9 +294,24 @@ function addHotProductEventListeners(products) {
     });
 }
 
-// Khởi tạo hiển thị sản phẩm khi load trang
+// Khởi tạo hiển thị sản phẩm khi load trang với Intersection Observer
 if (document.querySelector('.hot-product')) {
-    fetchProducts().then(renderHotProducts);
+    // Sử dụng Intersection Observer để lazy load
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                fetchProducts().then(renderHotProducts);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    const hotProductSection = document.querySelector('.hot-product');
+    if (hotProductSection) {
+        observer.observe(hotProductSection);
+    }
 }
 
 // Lấy id từ URL
@@ -249,7 +322,23 @@ function getProductIdFromUrl() {
 
 async function fetchProductDetail(id) {
   try {
-    const response = await axios.get(`https://684cf65e65ed08713914b281.mockapi.io/product/${id}`);
+    // Kiểm tra cache
+    const cacheKey = `product_${id}`;
+    const cached = productCache.get(cacheKey);
+    if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
+      return cached.data;
+    }
+    
+    const response = await axios.get(`https://684cf65e65ed08713914b281.mockapi.io/product/${id}`, {
+      timeout: 10000
+    });
+    
+    // Lưu vào cache
+    productCache.set(cacheKey, {
+      data: response.data,
+      timestamp: Date.now()
+    });
+    
     return response.data;
   } catch (error) {
     console.error('Lỗi khi lấy chi tiết sản phẩm:', error);
