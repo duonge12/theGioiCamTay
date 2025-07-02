@@ -200,7 +200,7 @@ class ProductManagement {
             
             // Redirect to product list
             setTimeout(() => {
-                window.location.href = './productlist.html';
+                window.location.href = './index.html';
             }, 1500);
             
         } catch (error) {
