@@ -1,115 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coolmate</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			rel="stylesheet"
+			href="asset/css/index.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="asset/css/header.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="asset/css/footer.css"
+		/>
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<h1>THẾ GIỚI CẦM TAY</h1>
+			<ul>
+				<li><a href="#">Trang chủ</a></li>
+				<li><a href="pages/products.html">Sản phẩm</a></li>
+			</ul>
+		</header>
+		<section id="banner">
+			<h1>
+				Khám phá hàng ngàn mẫu điện thoại chính hãng, giá tốt nhất thị
+				trường. Bảo hành uy tín, hỗ trợ tận tâm.
+			</h1>
+			<div class="welcome-video-container">
+				<video
+					data-inline-media
+					playsinline
+					autoplay
+					loop
+					muted
+					class="welcome-video-video"
+					src="asset/videos/small_2x.mp4"
+				></video>
+			</div>
+		</section>
+		<section id="phonebox">
+			<div class="wrapper">
+				<div class="phonebox-grid">
+					<div></div>
+					<div>
+						<img
+							src="asset/img/phonebox/box-1.png"
+							alt=""
+						/>
+					</div>
+					<div></div>
+					<div>
+						<img
+							src="asset/img/phonebox/box-2.png"
+							alt=""
+						/>
+					</div>
+					<div></div>
+				</div>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="./asset/css/style.css" as="style">
-    <link rel="preload" href="./asset/img/logo.png" as="image">
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://684cf65e65ed08713914b281.mockapi.io">
+				<div class="phonebox-grid">
+					<div>
+						<img
+							src="asset/img/phonebox/box-3.png"
+							alt=""
+						/>
+					</div>
+					<div></div>
+					<div>
+						<img
+							src="asset/img/phonebox/box-4.png"
+							alt=""
+						/>
+					</div>
+					<div></div>
+					<div>
+						<img
+							src="asset/img/phonebox/box-5.png"
+							alt=""
+						/>
+					</div>
+				</div>
 
-    <!-- font Awesome - load async -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <!-- Google font - load async -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <!-- Style css -->
-    <link rel="stylesheet" href="./asset/css/style.css" />
-    <link rel="stylesheet" href="./asset/css/responsive.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="container">
-        <div class="row-flex">
-          <div class="header-bar-icon"><i class="fa-solid fa-bars"></i></div>
-          <div class="header-logo">
-            <img src="./asset/img/logo.png" alt="Coolmate Logo" loading="eager">
-          </div>
-          <div class="header-nav">
-            <nav>
-              <li><a href="#">SẢN PHẨM ĐẶT HÀNG</a></li>
-              <li><a href="#">SẢN PHẨM CÓ SẴN </a></li>
-              <li><a href="#">GIẢM GIÁ</a></li>
-            </nav>
-          </div>
-          <div class="header-cart">
-            <i class="fa-solid fa-cart-shopping" number="0"></i>
-          </div>
-          <div class="admin-link">
-            <a href="https://admin-javascriptcapstone.vercel.app/">Admin</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Hot product -->
-    <section class="hot-product">
-      <div class="container">
-        <div class="row-grid">
-          <p class="heading-title">Sản Phẩm Mới</p>
-        </div>
-        <div class="row-grid row-grid-hot-products">
-          <!-- Loading skeleton -->
-          <div class="loading-skeleton">
-            <div class="skeleton-item"></div>
-            <div class="skeleton-item"></div>
-            <div class="skeleton-item"></div>
-            <div class="skeleton-item"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row-grid">
-          <div class="footer-item">
-            <p>Công ty TNHH Coolmate</p>
-            <p>Địa chỉ: 123 Đường ABC, HCM</p>
-            <p>Email: info@coolmate.com</p>
-            <p>Số điện thoại: 0909090909</p>
-          </div>
-          <div class="footer-item">
-            <p>CHÍNH SÁCH</p>
-            <p>Chính sách đổi trả</p>
-            <p>Chính sách khuyến mãi</p>
-            <p>Chính sách giao hàng</p>
-          </div>
-          <div class="footer-item">
-            <p>CHĂM SÓC KHÁCH HÀNG</p>
-            <p>Trải nghiệm khách hàng</p>
-            <p>Hỏi đáp Q&A</p>
-          </div>
-          
-        </div>
-      </div>
-    </footer>
-
-    <!-- Load scripts with defer for better performance -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
-    <script src="./asset/js/Product.js" defer></script>
-    <script src="./asset/js/shoppingCart.js" defer></script>
-    <script src="./asset/js/script.js" defer></script>
-
-  </body>
+				<div class="title">
+					<h1>THEO ĐUỔI PHONG CÁCH CỦA BẠN</h1>
+				</div>
+			</div>
+		</section>
+		<!-- <div style="height: 100vh"></div> -->
+		<footer>
+			<div class="container">
+				<div class="row-grid">
+					<div class="footer-item">
+						<p>Công ty TNHH Coolmate</p>
+						<p>Địa chỉ: 123 Đường ABC, HCM</p>
+						<p>Email: info@coolmate.com</p>
+						<p>Số điện thoại: 0909090909</p>
+					</div>
+					<div class="footer-item">
+						<p>CHÍNH SÁCH</p>
+						<p>Chính sách đổi trả</p>
+						<p>Chính sách khuyến mãi</p>
+						<p>Chính sách giao hàng</p>
+					</div>
+					<div class="footer-item">
+						<p>CHĂM SÓC KHÁCH HÀNG</p>
+						<p>Trải nghiệm khách hàng</p>
+						<p>Hỏi đáp Q&A</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="intro">
+			<h1><span>THẾ</span> GIỚI <span>CẦM</span> TAY</h1>
+		</div>
+		<script src="asset/js/phoneboxAnimation.js"></script>
+	</body>
 </html>

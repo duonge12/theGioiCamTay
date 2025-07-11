@@ -1,0 +1,29 @@
+header {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  border-radius: 15px;
+  transform: translateX(-50%);
+  background: hsla(0, 0%, 95%, 0.5);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+header li {
+  display: inline;
+  padding: 0 15px;
+}
+
+/*# sourceMappingURL=header.css.map */

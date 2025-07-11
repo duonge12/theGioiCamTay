@@ -1,0 +1,46 @@
+:root {
+  --header-height: 80px;
+  --main-bg-color: #d5d5d5;
+  --main-transition: all 0.3s ease;
+  --main-color: whitesmoke;
+  --main-font: "Open Sans", sans-serif;
+  --main-font-weight: 500;
+}
+
+/* Footer */
+footer {
+  background-color: #d5d5d5;
+  padding: 40px 0;
+  margin-top: 40px;
+}
+footer .row-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  gap: 20px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+@media (min-width: 768px) {
+  footer .row-grid {
+    max-width: 95%;
+  }
+}
+@media (min-width: 1024px) {
+  footer .row-grid {
+    max-width: 85%;
+  }
+}
+
+.footer-item p:first-child {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000;
+}
+.footer-item p {
+  margin-bottom: 8px;
+  color: grey;
+  line-height: 1.6;
+}
+
+/*# sourceMappingURL=footer.css.map */

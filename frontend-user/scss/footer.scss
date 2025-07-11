@@ -1,0 +1,37 @@
+@use "variables" as *;
+
+/* Footer */
+footer {
+	background-color: #d5d5d5;
+	padding: 40px 0;
+	margin-top: 40px;
+
+	.row-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 30%);
+		gap: 20px;
+		padding: 0 2rem;
+		margin: 0 auto;
+		margin-top: 80px;
+		@media (min-width: 768px) {
+			max-width: 95%;
+		}
+		@media (min-width: 1024px) {
+			max-width: 85%;
+		}
+	}
+}
+
+.footer-item {
+	p:first-child {
+		font-weight: bold;
+		margin-bottom: 15px;
+		color: $text-color;
+	}
+
+	p {
+		margin-bottom: 8px;
+		color: $text-gray;
+		line-height: 1.6;
+	}
+}
