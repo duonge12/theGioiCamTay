@@ -17,11 +17,13 @@ const animate = () => {
 	if (isAtFullScreen && scrolled <= 100) {
 		slideDown.style.visibility = "visible";
 		slideUp.style.visibility = "visible";
-		const slideDownDistance = Math.ceil(scrolled * 3) * 1.1;
-		const slideUpDistance = Math.ceil(scrolled * 1) * 1.1;
-		slideDown.style.transform = `translateY(${slideDownDistance}%)`;
-		slideUp.style.transform = `translateY(${slideUpDistance}%)`;
-		title.style.transform = `translateY(${scrolled * 1.1}%)`;
+
+		const slideDownDistance = rect.y * -1.6;
+		const slideUpDistance = rect.y * -0.5;
+		const titleDistance = rect.y * -1;
+		slideDown.style.transform = `translateY(${slideDownDistance}px)`;
+		slideUp.style.transform = `translateY(${slideUpDistance}px)`;
+		title.style.transform = `translateY(${titleDistance}px)`;
 
 		title.style.opacity = scrolled / 100;
 	}

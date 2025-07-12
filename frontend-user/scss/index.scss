@@ -34,32 +34,28 @@ ul {
 }
 
 #banner {
-	margin-top: 100px;
+	padding: 100px 16px 50px 16px;
+	box-shadow: 5px 5px 20px #888888;
 	h1 {
 		font-size: 1.5rem;
-		padding: 0 2rem;
 		margin: 0 auto;
-		margin-top: 80px;
 		text-align: center;
+		padding-bottom: 20px;
 		@media (min-width: 768px) {
 			font-size: 2rem;
-			max-width: 95%;
 		}
 		@media (min-width: 1024px) {
-			max-width: 85%;
 			font-size: 3.875rem;
 		}
 	}
 	.welcome-video-container {
 		position: relative;
-		height: 250px;
+		height: 350px;
 		border-radius: 20px;
-		margin: 20px 1rem;
-
+		margin: 0 auto;
 		overflow: hidden;
-
+		width: 100%;
 		@media (min-width: 768px) {
-			margin: 20px 2rem;
 			height: 400px;
 		}
 		@media (min-width: 1024px) {
@@ -75,13 +71,10 @@ ul {
 
 #phonebox {
 	.wrapper {
-		.can {
-			font-size: 23px;
-		}
 		position: relative;
 		height: 200vh;
 		width: 100vw;
-
+		overflow-x: hidden;
 		.phonebox-grid {
 			position: absolute;
 			height: 50vh;
@@ -100,18 +93,10 @@ ul {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			img {
-				width: 100%;
-				height: auto;
-				object-fit: cover;
 				display: block;
-				@media (min-width: 768px) {
-					width: auto;
-					height: 100%;
-				}
-				@media (min-width: 1024px) {
-					width: auto;
-					height: 100%;
-				}
+				max-width: 100%;
+				height: 100%;
+				object-fit: contain;
 			}
 		}
 		.phonebox-grid:nth-child(2) {
@@ -121,18 +106,24 @@ ul {
 			left: 0;
 			img {
 				width: 100%;
-				height: auto;
-				object-fit: cover;
+				height: 100%;
+				object-fit: contain;
 				display: block;
 				transform: scale(1.5);
 				@media (min-width: 768px) {
-					width: 100%;
-					height: auto;
-					transform: scale(1.1);
+					transform: scale(1.2);
 				}
 				@media (min-width: 1024px) {
-					width: auto;
-					height: 100%;
+					transform: scale(1);
+				}
+			}
+			div:nth-child(2) > img {
+				transform: scale(1.7);
+				@media (min-width: 768px) {
+					transform: scale(1.5);
+				}
+				@media (min-width: 1024px) {
+					transform: scale(1.3);
 				}
 			}
 		}
