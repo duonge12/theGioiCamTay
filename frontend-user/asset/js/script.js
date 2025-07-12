@@ -242,10 +242,10 @@ function renderHotProducts(products) {
               <p>${product.formatPrice()}</p>
             </div>
             <div class="hot-product-item-btn">
-                <button class="add-to-cart-btn" data-product-id="${
+                <button class="cart add-to-cart-btn" data-product-id="${
 					product.id
 				}">Thêm vào giỏ hàng</button>
-                <button class="buy-now-btn" data-product-id="${
+                <button class="cart buy-now-btn" data-product-id="${
 					product.id
 				}">Mua ngay</button>
             </div>

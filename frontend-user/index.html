@@ -22,10 +22,18 @@
 	</head>
 	<body>
 		<header>
-			<h1>THẾ GIỚI CẦM TAY</h1>
-			<ul>
+			<div>
+				<h1>THẾ GIỚI CẦM TAY</h1>
+				<ul>
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="pages/products.html">Sản phẩm</a></li>
+				</ul>
+				<button id="header-toggle"></button>
+			</div>
+			<ul class="menu-mobile">
 				<li><a href="#">Trang chủ</a></li>
-				<li><a href="pages/products.html">Sản phẩm</a></li>
+				<li><a href="pages/products.html">Sảns phẩm</a></li>
+				<li><a href="">Admine</a></li>
 			</ul>
 		</header>
 		<section id="banner">
@@ -41,28 +49,26 @@
 					loop
 					muted
 					class="welcome-video-video"
-					src="asset/videos/small_2x.mp4"
+					src="asset/videos/banner.mp4"
 				></video>
 			</div>
 		</section>
 		<section id="phonebox">
 			<div class="wrapper">
 				<div class="phonebox-grid">
-					<div></div>
 					<div>
 						<img
 							src="asset/img/phonebox/box-1.png"
 							alt=""
 						/>
 					</div>
-					<div></div>
+
 					<div>
 						<img
 							src="asset/img/phonebox/box-2.png"
 							alt=""
 						/>
 					</div>
-					<div></div>
 				</div>
 
 				<div class="phonebox-grid">
@@ -72,14 +78,14 @@
 							alt=""
 						/>
 					</div>
-					<div></div>
+
 					<div>
 						<img
 							src="asset/img/phonebox/box-4.png"
 							alt=""
 						/>
 					</div>
-					<div></div>
+
 					<div>
 						<img
 							src="asset/img/phonebox/box-5.png"
@@ -117,9 +123,10 @@
 				</div>
 			</div>
 		</footer>
-		<div class="intro">
+		<!-- <div class="intro">
 			<h1><span>THẾ</span> GIỚI <span>CẦM</span> TAY</h1>
-		</div>
+		</div> -->
 		<script src="asset/js/phoneboxAnimation.js"></script>
+		<script src="asset/js/header.js"></script>
 	</body>
 </html>

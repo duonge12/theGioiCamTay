@@ -1,29 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: none;
+}
+
 header {
   position: fixed;
   top: 15px;
   left: 50%;
   border-radius: 15px;
   transform: translateX(-50%);
-  background: hsla(0, 0%, 95%, 0.5);
+  background-color: hsl(0, 0%, 95%);
   padding: 10px 15px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   z-index: 10;
   color: black;
+  box-shadow: 5px 5px 20px #888888;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
+header > div {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  align-items: center;
 }
-
-header h1 {
-  font-size: 1.5rem;
+header > div h1 {
+  font-size: 1rem;
+  white-space: nowrap;
 }
-
-header li {
-  display: inline;
+@media (min-width: 768px) {
+  header > div h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  header > div h1 {
+    font-size: 2rem;
+  }
+}
+header > div > ul {
+  display: none;
+}
+@media (min-width: 768px) {
+  header > div > ul {
+    display: flex;
+  }
+}
+header > div > ul li {
   padding: 0 15px;
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  header > div > ul li a {
+    font-size: 1.5rem;
+  }
+}
+header > div #header-toggle {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  outline-color: hsla(0, 0%, 95%, 0.5);
+}
+@media (min-width: 768px) {
+  header > div #header-toggle {
+    display: none;
+  }
+}
+header a {
+  text-decoration: none;
+  color: black;
+}
+header > ul.menu-mobile {
+  max-height: 0px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+header > ul.menu-mobile.active {
+  max-height: 200px;
+}
+header > ul.menu-mobile li {
+  padding: 10px 0;
+}
+@media (min-width: 768px) {
+  header > ul.menu-mobile {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=header.css.map */

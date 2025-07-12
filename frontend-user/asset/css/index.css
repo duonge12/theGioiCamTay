@@ -36,77 +36,119 @@ ul {
   animation: roll-down 1s ease forwards;
 }
 
+#banner {
+  margin-top: 100px;
+}
 #banner h1 {
-  font-size: 3.875rem;
+  font-size: 1.5rem;
   padding: 0 2rem;
   margin: 0 auto;
   margin-top: 80px;
+  text-align: center;
 }
 @media (min-width: 768px) {
   #banner h1 {
+    font-size: 2rem;
     max-width: 95%;
   }
 }
 @media (min-width: 1024px) {
   #banner h1 {
     max-width: 85%;
+    font-size: 3.875rem;
   }
 }
 #banner .welcome-video-container {
-  margin: 0 auto;
+  position: relative;
+  height: 250px;
   border-radius: 20px;
-  margin-top: 40px;
-  min-height: 680px;
-  max-height: 680px;
+  margin: 20px 1rem;
   overflow: hidden;
 }
 @media (min-width: 768px) {
   #banner .welcome-video-container {
-    max-width: 95%;
+    margin: 20px 2rem;
+    height: 400px;
   }
 }
 @media (min-width: 1024px) {
   #banner .welcome-video-container {
-    max-width: 85%;
+    height: 800px;
   }
 }
 #banner .welcome-video-container video {
-  transform: rotate(90deg) translateX(-50%);
-  height: 110%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
 #phonebox .wrapper {
   position: relative;
   height: 200vh;
+  width: 100vw;
+}
+#phonebox .wrapper .can {
+  font-size: 23px;
 }
 #phonebox .wrapper .phonebox-grid {
   position: absolute;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
   height: 50vh;
+  width: 100vw;
   transition: all ease;
 }
 #phonebox .wrapper .phonebox-grid div {
-  height: 100%;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#phonebox .wrapper .phonebox-grid div img {
-  height: 50vh;
-  width: auto;
-  display: block;
-}
 #phonebox .wrapper .phonebox-grid:nth-child(1) {
   bottom: 100%;
   left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#phonebox .wrapper .phonebox-grid:nth-child(1) img {
   width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 768px) {
+  #phonebox .wrapper .phonebox-grid:nth-child(1) img {
+    width: auto;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  #phonebox .wrapper .phonebox-grid:nth-child(1) img {
+    width: auto;
+    height: 100%;
+  }
 }
 #phonebox .wrapper .phonebox-grid:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   top: 50%;
   left: 0;
+}
+#phonebox .wrapper .phonebox-grid:nth-child(2) img {
   width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 768px) {
+  #phonebox .wrapper .phonebox-grid:nth-child(2) img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (min-width: 1024px) {
+  #phonebox .wrapper .phonebox-grid:nth-child(2) img {
+    width: auto;
+    height: 100%;
+  }
 }
 #phonebox .wrapper .title {
   position: absolute;
@@ -116,9 +158,23 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: whitesmoke;
   -webkit-text-stroke: 1px black;
+  text-align: center;
+}
+#phonebox .wrapper .title h1 {
+  padding: 0 20px;
+}
+@media (min-width: 768px) {
+  #phonebox .wrapper .title {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  #phonebox .wrapper .title {
+    font-size: 3rem;
+  }
 }
 
 @keyframes fade-out {

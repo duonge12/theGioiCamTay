@@ -9,11 +9,15 @@
 
 /* Footer */
 footer {
-  background-color: #d5d5d5;
+  background-color: rgb(245, 245, 247);
   padding: 40px 0;
   margin-top: 40px;
 }
-footer .row-grid {
+footer .container {
+  width: 80%;
+  margin: 0 auto;
+}
+footer .container .row-grid {
   display: grid;
   grid-template-columns: repeat(3, 30%);
   gap: 20px;
@@ -22,12 +26,12 @@ footer .row-grid {
   margin-top: 80px;
 }
 @media (min-width: 768px) {
-  footer .row-grid {
+  footer .container .row-grid {
     max-width: 95%;
   }
 }
 @media (min-width: 1024px) {
-  footer .row-grid {
+  footer .container .row-grid {
     max-width: 85%;
   }
 }

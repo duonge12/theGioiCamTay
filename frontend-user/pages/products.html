@@ -74,10 +74,18 @@
 	<body>
 		<!-- Header -->
 		<header>
-			<h1>THẾ GIỚI CẦM TAY</h1>
-			<ul>
-				<li><a href="../index.html">Trang chủ</a></li>
-				<li><a href="pages/products.html">Sản phẩm</a></li>
+			<div>
+				<h1>THẾ GIỚI CẦM TAY</h1>
+				<ul>
+					<li><a href="../index.html">Trang chủ</a></li>
+					<li><a href="pages/products.html">Sản phẩm</a></li>
+				</ul>
+				<button id="header-toggle"></button>
+			</div>
+			<ul class="menu-mobile">
+				<li><a href="#">Trang chủ</a></li>
+				<li><a href="pages/products.html">Sảns phẩm</a></li>
+				<li><a href="">Admine</a></li>
 			</ul>
 		</header>
 
@@ -88,7 +96,6 @@
 					<p class="heading-title">Sản Phẩm Mới</p>
 				</div>
 				<div class="row-grid row-grid-hot-products">
-					<!-- Loading skeleton -->
 					<div class="loading-skeleton">
 						<div class="skeleton-item"></div>
 						<div class="skeleton-item"></div>
@@ -100,7 +107,7 @@
 		</section>
 
 		<!-- Footer -->
-		<footer>
+		<!-- <footer>
 			<div class="container">
 				<div class="row-grid">
 					<div class="footer-item">
@@ -122,7 +129,7 @@
 					</div>
 				</div>
 			</div>
-		</footer>
+		</footer> -->
 
 		<!-- Load scripts with defer for better performance -->
 		<script
@@ -141,5 +148,6 @@
 			src="../asset/js/script.js"
 			defer
 		></script>
+		<script src="../asset/js/header.js"></script>
 	</body>
 </html>
