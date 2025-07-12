@@ -90,7 +90,7 @@ ul {
   position: absolute;
   height: 50vh;
   width: 100vw;
-  transition: all ease;
+  transition: all 0.01s ease;
 }
 #phonebox .wrapper .phonebox-grid div {
   height: 50vh;
@@ -107,7 +107,7 @@ ul {
 #phonebox .wrapper .phonebox-grid:nth-child(1) img {
   display: block;
   max-width: 100%;
-  height: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 #phonebox .wrapper .phonebox-grid:nth-child(2) {
@@ -117,8 +117,8 @@ ul {
   left: 0;
 }
 #phonebox .wrapper .phonebox-grid:nth-child(2) img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   display: block;
   transform: scale(1.5);
