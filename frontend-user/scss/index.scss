@@ -1,6 +1,7 @@
 * {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
 }
 body {
 	font-family: sans-serif;
@@ -24,7 +25,13 @@ ul {
 	z-index: 10;
 	background-color: whitesmoke;
 	h1 {
-		font-size: 3rem;
+		font-size: 1.5rem;
+		@media (min-width: 768px) {
+			font-size: 2rem;
+		}
+		@media (min-width: 1024px) {
+			font-size: 3rem;
+		}
 		> span:nth-of-type(1),
 		> span:nth-of-type(2) {
 			display: inline-block;
@@ -34,37 +41,29 @@ ul {
 }
 
 #banner {
-	padding: 100px 16px 50px 16px;
-	box-shadow: 5px 5px 20px #888888;
-	h1 {
-		font-size: 1.5rem;
-		margin: 0 auto;
-		text-align: center;
-		padding-bottom: 20px;
-		@media (min-width: 768px) {
-			font-size: 2rem;
-		}
-		@media (min-width: 1024px) {
-			font-size: 3.875rem;
-		}
-	}
+	height: 100vh;
+	padding: 100px 15px 15px 15px;
 	.welcome-video-container {
-		position: relative;
-		height: 350px;
-		border-radius: 20px;
-		margin: 0 auto;
+		height: 100%;
+		border-radius: 15px;
 		overflow: hidden;
-		width: 100%;
-		@media (min-width: 768px) {
-			height: 400px;
-		}
-		@media (min-width: 1024px) {
-			height: 800px;
-		}
+		box-shadow: 5px 5px 2px #888888;
 		video {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			&:nth-child(1) {
+				display: block;
+				@media (min-width: 768px) {
+					display: none;
+				}
+			}
+			&:nth-child(2) {
+				display: none;
+				@media (min-width: 768px) {
+					display: block;
+				}
+			}
 		}
 	}
 }
@@ -74,12 +73,12 @@ ul {
 		position: relative;
 		height: 200vh;
 		width: 100vw;
-		overflow-x: hidden;
+		overflow: hidden;
 		.phonebox-grid {
 			position: absolute;
 			height: 50vh;
 			width: 100vw;
-			transition: all 0.01s ease;
+			transition: all 0.2s ease;
 			div {
 				height: 50vh;
 				display: flex;
@@ -104,7 +103,7 @@ ul {
 			grid-template-columns: repeat(3, 1fr);
 			top: 50%;
 			left: 0;
-			img {
+			> div > img {
 				max-width: 100%;
 				max-height: 100%;
 				object-fit: contain;
@@ -117,7 +116,7 @@ ul {
 					transform: scale(1);
 				}
 			}
-			div:nth-child(2) > img {
+			> div:nth-child(2) > img {
 				transform: scale(1.7);
 				@media (min-width: 768px) {
 					transform: scale(1.5);
