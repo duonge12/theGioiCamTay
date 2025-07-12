@@ -21,8 +21,8 @@ const animate = () => {
 		const slideUpDistance = Math.ceil(scrolled * 1) * 1.1;
 		slideDown.style.transform = `translateY(${slideDownDistance}%)`;
 		slideUp.style.transform = `translateY(${slideUpDistance}%)`;
-		title.style.transform = `translateY(${scrolled}%)`;
-		console.log("a", Math.ceil(scrolled * 3));
+		title.style.transform = `translateY(${scrolled * 1.1}%)`;
+
 		title.style.opacity = scrolled / 100;
 	}
 
