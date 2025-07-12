@@ -164,6 +164,7 @@ ul {
   color: whitesmoke;
   -webkit-text-stroke: 1px black;
   text-align: center;
+  opacity: 0;
 }
 #phonebox .wrapper .title h1 {
   padding: 0 20px;
