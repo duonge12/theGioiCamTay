@@ -9,11 +9,11 @@
 		<title>Thế Giới Cầm Tay</title>
 
 		<!-- Preload critical resources -->
-		<link
+		<!-- <link
 			rel="preload"
 			href="../asset/css/style.css"
 			as="style"
-		/>
+		/> -->
 		<link
 			rel="preload"
 			href="../asset/img/logo.png"
@@ -58,13 +58,14 @@
 			onload="this.media='all'"
 		/>
 		<!-- Style css -->
-		<link
-			rel="stylesheet"
-			href="../asset/css/style.css"
-		/>
+
 		<link
 			rel="stylesheet"
 			href="../asset/css/header.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="../asset/css/products.css"
 		/>
 		<link
 			rel="stylesheet"
@@ -73,7 +74,7 @@
 	</head>
 	<body>
 		<!-- Header -->
-		<header>
+		<!-- <header>
 			<div>
 				<h1>THẾ GIỚI CẦM TAY</h1>
 				<ul>
@@ -87,19 +88,37 @@
 				<li><a href="pages/products.html">Sảns phẩm</a></li>
 				<li><a href="">Admine</a></li>
 			</ul>
-		</header>
+		</header> -->
 
 		<!-- Hot product -->
-		<section class="hot-product">
-			<div class="container">
-				<div class="row-grid">
-					<p class="heading-title">Sản Phẩm Mới</p>
-				</div>
-				<div class="row-grid row-grid-hot-products"></div>
-			</div>
-		</section>
-		<section id="product-cards"></section>
 
+		<section id="products">
+			<h1>Sản phẩm</h1>
+			<div class="products-list"></div>
+		</section>
+		<div id="modal-detail">
+			<div class="modal-card">
+				<div>
+					<img
+						class="product-img"
+						src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-hh-600x600.jpg"
+						alt=""
+					/>
+				</div>
+				<div class="modal-info">
+					<h2 class="product-name">iphoneX</h2>
+					<p class="product-screen">screen 68</p>
+					<p class="product-price">19.560.000 đ</p>
+					<div class="buttons">
+						<button id="add-to-cart-button">
+							<i class="fa fa-cart-plus"></i>
+						</button>
+						<button id="view-more-button">Xem thêm</button>
+					</div>
+				</div>
+				<button id="cancle-modal-detail-button">X</button>
+			</div>
+		</div>
 		<!-- Footer -->
 		<!-- <footer>
 			<div class="container">
@@ -125,7 +144,6 @@
 			</div>
 		</footer> -->
 
-		<!-- Load scripts with defer for better performance -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
 			defer
@@ -142,6 +160,7 @@
 			src="../asset/js/script.js"
 			defer
 		></script>
-		<script src="../asset/js/header.js"></script>
+		<script src="../asset/js/modal.js"></script>
+		<!-- <script src="../asset/js/header.js"></script> -->
 	</body>
 </html>

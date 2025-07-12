@@ -7,6 +7,7 @@
     "sass":"npx sass --watch ./frontend-user/scss/index.scss ./frontend-user/asset/css/index.css",
     "sass-header":"npx sass --watch ./frontend-user/scss/header.scss ./frontend-user/asset/css/header.css",
     "sass-footer":"npx sass --watch ./frontend-user/scss/footer.scss ./frontend-user/asset/css/footer.css",
+    "sass-products":"npx sass --watch ./frontend-user/scss/products.scss ./frontend-user/asset/css/products.css",
     "live": "live-server ./frontend-user --port=5000 --host=127.0.0.1 --open=./index.html --browser=chrome"
   },
   "keywords": [],

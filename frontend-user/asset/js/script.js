@@ -212,117 +212,167 @@ async function fetchProducts() {
 		return [];
 	}
 }
-
+function createElement({ tag, props, child }) {
+	const element = document.createElement(tag);
+	if (props) {
+		for (const [key, value] of Object.entries(props)) {
+			element.setAttribute(key, value);
+		}
+	}
+	if (child) {
+		element.append(...child);
+	}
+	return element;
+}
+function createProductCard(product) {
+	const { id, img, name, screen, price } = product;
+	const card = createElement({
+		tag: "div",
+		props: {
+			["class"]: "product-card",
+			["data-id"]: id,
+			["data-url"]: img,
+			["data-name"]: name,
+			["data-screen"]: screen,
+			["data-price"]: price,
+		},
+		child: [
+			createElement({
+				tag: "div",
+				props: undefined,
+				child: [
+					createElement({
+						tag: "img",
+						props: { ["src"]: img, ["alt"]: "Not found" },
+						child: undefined,
+					}),
+				],
+			}),
+			createElement({
+				tag: "div",
+				props: undefined,
+				child: [
+					createElement({
+						tag: "h2",
+						props: undefined,
+						child: [name],
+					}),
+					createElement({
+						tag: "div",
+						props: undefined,
+						child: [price],
+					}),
+				],
+			}),
+		],
+	});
+	card.addEventListener("click", () => {
+		const product = {
+			["url"]: card.dataset.url,
+			["name"]: card.dataset.name,
+			["screen"]: card.dataset.screen,
+			["price"]: card.dataset.price,
+		};
+		if (product) {
+			const modalCard = modal.querySelector(".modal-card");
+			modalCard.querySelector(".product-img").src = product.url;
+			modalCard.querySelector(".product-name").innerHTML = product.name;
+			modalCard.querySelector(".product-screen").innerHTML =
+				product.screen;
+			modalCard.querySelector(".product-name").innerHTML = product.name;
+			modalCard.querySelector(".product-price").innerHTML = product.price;
+			modal.classList.add("active");
+		}
+	});
+	return card;
+}
 function renderHotProducts(products) {
-	const container = document.querySelector(".row-grid-hot-products");
+	const container = document.querySelector("#products .products-list");
 	if (!container) return;
 
 	// Xóa loading skeleton
-	const skeleton = container.querySelector(".loading-skeleton");
-	if (skeleton) {
-		skeleton.remove();
-	}
+	// const skeleton = container.querySelector(".loading-skeleton");
+	// if (skeleton) {
+	// 	skeleton.remove();
+	// }
 
 	if (products.length === 0) {
 		container.innerHTML =
 			'<p style="text-align: center; grid-column: 1/-1; color: #666;">Không có sản phẩm nào</p>';
 		return;
 	}
-
-	container.innerHTML = products
-		.map(
-			(product) => `
-        <div class="hot-product-item">
-            <a href="./product.html?id=${product.id}">
-                <img src="${product.img}" alt="${product.name}" loading="lazy">
-            </a>
-            <p><a href="./product.html?id=${product.id}">${product.name}</a></p>
-            <span>${product.screen}</span>
-            <div class="hot-product-item-price">
-              <p>${product.formatPrice()}</p>
-            </div>
-            <div class="hot-product-item-btn">
-                <button class="cart add-to-cart-btn" data-product-id="${
-					product.id
-				}">Thêm vào giỏ hàng</button>
-                <button class="cart buy-now-btn" data-product-id="${
-					product.id
-				}">Mua ngay</button>
-            </div>
-        </div>
-    `
-		)
-		.join("");
+	const cards = products.map((product) => createProductCard(product));
+	container.append(...cards);
 
 	// Thêm event listener cho các button sau khi render
-	addHotProductEventListeners(products);
+	// addHotProductEventListeners(products);
 }
 
 // Hàm thêm event listener cho các button trong danh sách sản phẩm hot
-function addHotProductEventListeners(products) {
-	// Event listener cho button "Thêm vào giỏ hàng"
-	const addToCartBtns = document.querySelectorAll(
-		".hot-product-item .add-to-cart-btn"
-	);
-	addToCartBtns.forEach((btn) => {
-		btn.addEventListener("click", async (e) => {
-			e.preventDefault();
-			e.stopPropagation();
+// function addHotProductEventListeners(products) {
+// 	// Event listener cho button "Thêm vào giỏ hàng"
+// 	const addToCartBtns = document.querySelectorAll(
+// 		".hot-product-item .add-to-cart-btn"
+// 	);
+// 	addToCartBtns.forEach((btn) => {
+// 		btn.addEventListener("click", async (e) => {
+// 			e.preventDefault();
+// 			e.stopPropagation();
 
-			const productId = btn.getAttribute("data-product-id");
-			const product = products.find((p) => p.id === productId);
+// 			const productId = btn.getAttribute("data-product-id");
+// 			const product = products.find((p) => p.id === productId);
 
-			if (!product) {
-				alert("Không tìm thấy thông tin sản phẩm!");
-				return;
-			}
+// 			if (!product) {
+// 				alert("Không tìm thấy thông tin sản phẩm!");
+// 				return;
+// 			}
 
-			// Đợi ShoppingCart được khởi tạo
-			if (!window.shoppingCart) {
-				alert("Đang khởi tạo giỏ hàng, vui lòng thử lại!");
-				return;
-			}
+// 			// Đợi ShoppingCart được khởi tạo
+// 			if (!window.shoppingCart) {
+// 				alert("Đang khởi tạo giỏ hàng, vui lòng thử lại!");
+// 				return;
+// 			}
 
-			// Thêm vào giỏ hàng với số lượng 1
-			window.shoppingCart.addToCart(product, 1);
-			alert("Đã thêm sản phẩm vào giỏ hàng!");
-		});
-	});
+// 			// Thêm vào giỏ hàng với số lượng 1
+// 			window.shoppingCart.addToCart(product, 1);
+// 			alert("Đã thêm sản phẩm vào giỏ hàng!");
+// 		});
+// 	});
 
-	// Event listener cho button "Mua ngay"
-	const buyNowBtns = document.querySelectorAll(
-		".hot-product-item .buy-now-btn"
-	);
-	buyNowBtns.forEach((btn) => {
-		btn.addEventListener("click", async (e) => {
-			e.preventDefault();
-			e.stopPropagation();
+// 	// Event listener cho button "Mua ngay"
+// 	const buyNowBtns = document.querySelectorAll(
+// 		".hot-product-item .buy-now-btn"
+// 	);
+// 	buyNowBtns.forEach((btn) => {
+// 		btn.addEventListener("click", async (e) => {
+// 			e.preventDefault();
+// 			e.stopPropagation();
 
-			const productId = btn.getAttribute("data-product-id");
-			const product = products.find((p) => p.id === productId);
+// 			const productId = btn.getAttribute("data-product-id");
+// 			const product = products.find((p) => p.id === productId);
 
-			if (!product) {
-				alert("Không tìm thấy thông tin sản phẩm!");
-				return;
-			}
+// 			if (!product) {
+// 				alert("Không tìm thấy thông tin sản phẩm!");
+// 				return;
+// 			}
 
-			// Đợi ShoppingCart được khởi tạo
-			if (!window.shoppingCart) {
-				alert("Đang khởi tạo giỏ hàng, vui lòng thử lại!");
-				return;
-			}
+// 			// Đợi ShoppingCart được khởi tạo
+// 			if (!window.shoppingCart) {
+// 				alert("Đang khởi tạo giỏ hàng, vui lòng thử lại!");
+// 				return;
+// 			}
 
-			// Thêm vào giỏ hàng với số lượng 1
-			window.shoppingCart.addToCart(product, 1);
+// 			// Thêm vào giỏ hàng với số lượng 1
+// 			window.shoppingCart.addToCart(product, 1);
 
-			// Chuyển thẳng đến trang giỏ hàng
-			window.location.href = "./shoppingcard.html";
-		});
-	});
-}
+// 			// Chuyển thẳng đến trang giỏ hàng
+// 			window.location.href = "./shoppingcard.html";
+// 		});
+// 	});
+// }
 
 // Khởi tạo hiển thị sản phẩm khi load trang với Intersection Observer
-if (document.querySelector(".hot-product")) {
+if (document.querySelector("#products .products-list")) {
 	// Sử dụng Intersection Observer để lazy load
 	const observer = new IntersectionObserver(
 		(entries) => {
@@ -338,7 +388,9 @@ if (document.querySelector(".hot-product")) {
 		}
 	);
 
-	const hotProductSection = document.querySelector(".hot-product");
+	const hotProductSection = document.querySelector(
+		"#products .products-list"
+	);
 	if (hotProductSection) {
 		observer.observe(hotProductSection);
 	}
@@ -378,7 +430,6 @@ async function fetchProductDetail(id) {
 		return null;
 	}
 }
-
 function renderProductDetail(product) {
 	if (!product) return;
 
