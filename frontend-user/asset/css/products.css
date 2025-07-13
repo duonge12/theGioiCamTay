@@ -5,12 +5,29 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
+  background-color: rgb(225, 230, 236);
 }
 
 ul {
   list-style-type: none;
+}
+
+#products {
+  margin-top: 80px;
+}
+#products h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #2b2e36;
+}
+@media (min-width: 768px) {
+  #products h1 {
+    margin-top: 100px;
+    font-size: 3rem;
+  }
 }
 
 .products-list {
@@ -32,6 +49,7 @@ ul {
 .products-list .product-card {
   position: relative;
   min-height: 200px;
+  background-color: whitesmoke;
   cursor: pointer;
   box-shadow: 0px 0px 8px #888888;
   border-radius: 15px;

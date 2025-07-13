@@ -290,12 +290,6 @@ function renderHotProducts(products) {
 	const container = document.querySelector("#products .products-list");
 	if (!container) return;
 
-	// Xóa loading skeleton
-	// const skeleton = container.querySelector(".loading-skeleton");
-	// if (skeleton) {
-	// 	skeleton.remove();
-	// }
-
 	if (products.length === 0) {
 		container.innerHTML =
 			'<p style="text-align: center; grid-column: 1/-1; color: #666;">Không có sản phẩm nào</p>';
@@ -303,9 +297,6 @@ function renderHotProducts(products) {
 	}
 	const cards = products.map((product) => createProductCard(product));
 	container.append(...cards);
-
-	// Thêm event listener cho các button sau khi render
-	// addHotProductEventListeners(products);
 }
 
 // Hàm thêm event listener cho các button trong danh sách sản phẩm hot

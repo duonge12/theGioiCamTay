@@ -3,18 +3,22 @@
 /* Footer */
 footer {
 	background-color: rgb(245, 245, 247);
-	padding: 40px 0;
+	padding: 10px 0;
 	.container {
 		width: 80%;
 		margin: 0 auto;
+		@media (min-width: 768px) {
+			width: 100%;
+		}
 		.row-grid {
 			display: grid;
-			grid-template-columns: repeat(3, 30%);
-			gap: 20px;
-			padding: 0 2rem;
+			grid-template-columns: repeat(1, 30%);
+			gap: 10px;
+			padding: 0 0 50px 0;
 			margin: 0 auto;
-			margin-top: 80px;
+
 			@media (min-width: 768px) {
+				grid-template-columns: repeat(3, 30%);
 				max-width: 95%;
 			}
 			@media (min-width: 1024px) {
@@ -25,15 +29,28 @@ footer {
 }
 
 .footer-item {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 	p:first-child {
+		white-space: nowrap;
 		font-weight: bold;
-		margin-bottom: 15px;
-		color: $text-color;
+		color: black;
+		font-size: 1.2rem;
+		@media (min-width: 1024px) {
+			font-size: 1.5rem;
+		}
 	}
 
 	p {
-		margin-bottom: 8px;
+		white-space: nowrap;
 		color: $text-gray;
 		line-height: 1.6;
+		@media (min-width: 768px) {
+			white-space: wrap;
+		}
+		@media (min-width: 1024px) {
+			font-size: 1.2rem;
+		}
 	}
 }
